@@ -1,4 +1,4 @@
-# MATH 2331 Study Guide
+# [MATH 2331 Study Guide](https://github.com/mikewheel/math-2331-study-guide/raw/master/math_2331_notes.pdf)
 
 If you're like me, you probably find the text for Northeastern's *Linear Algebra* course to be a little bit long-winded. In an effort to study for the upcoming final, I've distilled the contents of the textbook into the main points that I (and students like me) need to remember in order to solve problems and make the grade.
 
