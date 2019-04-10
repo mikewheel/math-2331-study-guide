@@ -234,7 +234,7 @@
 	\end{bmatrix}$
 	
 	\subsection{Least Squares and Data Fitting}
-	TODO -- write me!
+	\textbf{TODO -- write me!}
 	
 	\setcounter{section}{5}
 	\section{Determinants}
@@ -315,10 +315,24 @@
 	
 	The eigenvectors with eigenvalue $\lambda$ are the nonzero vectors in $E_\lambda$. Thus finding the eigenvectors of $\lambda$ is equivalent to finding a basis of the eigenspace $E_\lambda$.\\
 	
-	\textbf{To determine the eigenvectors of a matrix}:
+	\textbf{To determine the eigenvectors of a matrix}:\\
+	For each eigenvalue $\lambda$:
 	\begin{itemize}
-		\item For each eigenvalue $\lambda$ find the eigenspace for $\lambda$ by solving for the vectors that span $kernel(A - \lambda I_n)$.
-		\item Recall that this means solving for $rref(A)$ and parameterizing the non-leading columns.
+		\item Find the eigenspace for $\lambda$ by solving for the vectors that span $kernel(A - \lambda I_n)$.
+		\item Recall from section 3 that you have to for $rref(A-\lambda I_n)$
+		\item Then you have to and find the relations between the columns by parameterizing the columns without leading 1s.
+	\end{itemize}
+
+	The \textbf{geometric multiplicity} of an eigenvalue $\lambda$ is the dimension of its associated eigenspace $E_\lambda$, and according to the Rank-Nullity theorem is equal to $n - rank(A - \lambda I_n)$.\\
+	
+	An $n \times n$ matrix is diagonalizable iff the geometric multiplicities of the eigenvalues add up to $n$.\\
+	
+	If matrix $A$ is similar to matrix $B$:
+	\begin{itemize}
+		\item The two matrices have the same characteristic polynomial.
+		\item $rank(A) = rank(B)$ and $nullity(A) = nullity(B)$
+		\item The two matrices have the same eigenvalues, but NOT necessarily the same eigenvectors.
+		\item The two matrices have the same determinant and the same trace.
 	\end{itemize}
 	
 	So to review:
@@ -329,7 +343,7 @@
 	\end{itemize} 
 	
 	\subsection{Dynamical Systems}
-	TODO -- write me!
+	According to Prof. Antunes this section is NOT going to be covered on the final.
 	
 	\setcounter{section}{7}
 	\section{Symmetric Matrices and Quadratic Forms}
@@ -354,9 +368,28 @@
 	 \end{itemize}
 	
 	\subsection{Quadratic Forms}
-	TODO -- write me!
+	A \textbf{quadratic form} is a function $q(x_1 \ldots x_n): \mathbb{R}^n \rightarrow \mathbb{R}$ that is a linear combination of functions of the form $x_i x_j$, where $i$ can be equal to $j$.\\
+	
+	A quadratic form can be expressed as $q(\vec{x}) = \vec{x} \cdot A\vec{x} = \vec{x}^T A\vec{x}$ . Note that $A$ is "symmetric by design".\\
+	
+	If $\mathfrak{B}$ is an orthonormal eigenbasis for the above symmetric $A$ with eigenvalues $\lambda_1 \ldots \lambda_n$, and if $c_1 \ldots c_n$ are the coordinates of $\vec{x}$ with respect to $\mathfrak{B}$, then:
+	$$
+	q(\vec{x}) = \lambda_1 c^2_1 + \ldots + \lambda_n c^2_n
+	$$
+	This is referred to as \textbf{diagonalizing the quadratic form}.\\
+	
+	For a quadratic form $q(\vec{x}) = \vec{x} \cdot A\vec{x}$, we say that $A$ is:
+	\begin{itemize}
+		\item \textbf{positive definite} if $q(\vec{x}) > 0 \enskip \forall \vec{x} \in \mathbb{R}, \vec{x} \neq \vec{0}$
+		\item \textbf{positive semidefinite} if $q(\vec{x}) \geq 0 \enskip \forall \vec{x} \in \mathbb{R}$
+		\item \textbf{negative definite} if $q(\vec{x}) < 0 \enskip \forall \vec{x} \in \mathbb{R}, \vec{x} \neq \vec{0}$
+		\item \textbf{negative semidefinite} if $q(\vec{x}) \leq 0 \enskip \forall \vec{x} \in \mathbb{R}$
+		\item \textbf{indefinite} if $q(\vec{x})$ can take both positive and negative values.
+	\end{itemize}
+
+	A symmetric matrix $A$ is positive definite iff all of its eigenvalues are positive, and positive semidefinite iff all of its eigenvalues are positive or zero.\\
 	
 	\subsection{Singular Values}
-	TODO -- write me!
+	\textbf{TODO -- write me!}
 	
 \end{document}
