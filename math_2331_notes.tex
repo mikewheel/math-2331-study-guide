@@ -8,6 +8,7 @@
 \author{Typed up by Michael Wheeler (CCIS '21)}
 \begin{document}
 	\maketitle
+	
 	\setcounter{section}{2}
 	\section{Subspaces of $\mathbb{R}^n$ and Their Dimensions}
 	\subsection{Image and Kernel of a Linear Transformation}
@@ -389,9 +390,51 @@
 
 	A symmetric matrix $A$ is positive definite iff all of its eigenvalues are positive, and positive semidefinite iff all of its eigenvalues are positive or zero. (Likewise for negative and negative semidefinite.) \\
 	
+	If the quadratic form $q(\vec{x}) = \vec{x} \cdot A\vec{x}$ has the symmetric $n \times n$ matrix $A$ with $n$ distinct eigenvalues, then the eigenspaces of $A$ are the \textbf{principal axes} of $q$.\\
 	
+	Let $C$ be a curve in $\mathbb{R}^2$ defined by $q(x_1, x_2) = ax^2_1 + bx_1x_2 + cx^2_2$, where $\lambda_1, \lambda_2$ are eigenvalues of the matrix $A = 
+	\begin{bmatrix} a & \frac{b}{2}\\ \frac{b}{2} & c \end{bmatrix}$ of $q$. 
+	If $\lambda_1, \lambda_2$ are both positive then $C$ is an ellipse, and if one is positive and the other is negative then $C$ is a hyperbola.\\
 	
 	\subsection{Singular Values}
-	\textbf{TODO -- write me!}
+	The \textbf{singular values} of an $n \times m$ matrix $A$ are the square roots of the eigenvalues of the symmetric $m \times m$ matrix $A^TA$. The singular values are customarily listed in decreasing order as $\sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_m \geq 0$.\\
+	
+	If $L(\vec{x}) = A\vec{x}: \mathbb{R}^m \rightarrow \mathbb{R}^n$ is a linear transformation, then there exists an orthonormal basis $\vec{v}_1 \ldots \vec{v}_m$ of $\mathbb{R}_m$ such that:
+	\begin{itemize}
+		\item $L(\vec{v}_1), \ldots ,L(\vec{v}_m)$ are orthogonal
+		\item The lengths of $L(\vec{v}_1), \ldots ,L(\vec{v}_m)$ are the singular values $\sigma_1, \ldots , \sigma_m$ of matrix $A$.
+	\end{itemize}
+	
+	\textbf{To construct such an orthonormal basis that yields singular values}:
+	\begin{itemize}
+		\item Find an orthonormal eigenbasis for matrix $A^TA$.
+		\item Make sure that the eigenvalues appear in descending order $\lambda_1 \geq \ldots \geq \lambda_m \geq 0$ such that $\lambda_i = \sigma^2_i \enskip \forall i = 1, \ldots, m$
+	\end{itemize}
+
+	If $A$ is an $n \times m$ matrix of rank $r$ then the singular values $\sigma_1 \geq \ldots \geq \sigma_r$ are nonzero, while $\sigma_{r+1} \geq \ldots \geq \sigma_m$ are zero.\\
+	
+	Any $n \times m$ matrix $A$ can be \textbf{decomposed} into its singular values using the following relation:
+	$$
+	A = U \Sigma V^T
+	$$
+	where \begin{itemize}
+		\item U is an orthogonal $n \times n$ matrix
+		\item V is an orthogonal $m \times m$ matrix
+		\item $\Sigma$ is an $n \times m$ matrix where the first $r=rank(A)$ diagonal entries are the nonzero singular values $\sigma_i \ldots \sigma_r$ of $A$, and the remaining diagonal entries are zero.
+	\end{itemize}
+	
+	\textbf{To perform a Singular Value Decomposition}:
+	\begin{itemize}
+		\item Start with a linear transformation $L(\vec{x}) = A\vec{x}: \mathbb{R}^m \rightarrow \mathbb{R}^n$
+		\item Find an orthonormal basis $\vec{v}_1 \ldots \vec{v}_m$ of $\mathbb{R}^m$ as described above.
+		\item For $1 \ldots r=rank(A)$ we know that $A\vec{v}_1 \ldots A\vec{v}_r$ are orthogonal and nonzero with $\lvert A\vec{v}_i \rvert = \sigma_i$
+		\item So then let $\vec{u}_1 = \frac{1}{\sigma_1}A\vec{v}_1, \ldots, \vec{u}_r = \frac{1}{\sigma_r}A\vec{v}_r$ and $\vec{u}_{r+1} = \ldots = \vec{u}_{n} = \vec{0}$
+		\item Write $A \begin{bmatrix}
+		\vec{v}_1 \ldots \vec{v}_r \enskip \vec{v}_{r+1} \ldots \vec{v}_m \\
+		\end{bmatrix} = \begin{bmatrix}
+		\sigma_1 \vec{u}_1 \ldots \sigma_r \vec{u}_r \enskip \vec{0} \ldots \vec{0}
+		\end{bmatrix}$
+		\item The above takes the form $AV = U\Sigma$ where $U$ is formed by concatenating the unit vectors calculated above and the first $r$ diagonal entries of $\Sigma$ are $\sigma_1 \ldots \sigma_r$ and all other entries are zero.
+	\end{itemize}
 	
 \end{document}
