@@ -1,6 +1,7 @@
 \documentclass[]{scrartcl}
 \usepackage{amsmath, empheq}
 \usepackage{amssymb}
+\usepackage{hyperref}
 \renewcommand{\familydefault}{\sfdefault}
 \setlength{\parindent}{0pt}
 \title{Study Guide for the MATH 2331 Final}
@@ -9,6 +10,106 @@
 \begin{document}
 	\maketitle
 	
+	\setcounter{section}{0}
+	\section{Linear Equations}
+	\subsection{Introduction to Linear Systems}
+	Linear Algebra is basically just solving systems of linear equations on steroids.
+	
+	\subsection{Matrices, Vectors, and Gauss-Jordan Elimination}
+	A \textbf{matrix} is an ordered arrangement of the coefficients that make up a system of linear equations. A matrix that is $n$ numbers tall and $m$ numbers wide is an $n \times m$ matrix.\\
+	
+	$n$ customarily denotes the number of rows in a matrix, while $m$ similarly denotes the number of columns. $n$ represents the number of equations in the system, while $m$ represents the number of unknowns.\\
+	
+	A \textbf{vector} is a single-column or single-row matrix. Vectors are analogous to points in that their entries can satisfy solutions of equations, but they're actually represented in the coordinate plane as a directed line (an arrow). All the column vectors with $n$ entries make up the \textbf{vector space} $\mathbb{R}^n$\\
+	
+	\href{https://www.khanacademy.org/math/precalculus/precalc-matrices}{Here's some videos of Sal Khan teaching you how to do Gauss-Jordan Elimination.}
+	
+	\subsection{On the Solutions of Linear Systems}
+	A matrix is in \textbf{Reduced-Row Echelon Form} when the following are true:
+	\begin{itemize}
+		\item If a row has nonzero entries then the leftmost entry is 1 (a \textbf{leading 1})
+		\item The leading 1 is the only nonzero entry in its column.
+		\item If a row contains a leading 1 then each row above it also contains a leading 1.
+	\end{itemize}
+
+	A system of equations is \textbf{inconsistent} if it has no solutions. If a solution is consistent, it either has exactly one solution or infinitely many solutions. Here's how you know:
+	
+	\begin{itemize}
+		\item If you get $0 = 1$ then the system it represents is inconsistent.
+		\item If all rows of $rref(A)$ have only leading 1s then the system has exactly one solution.
+		\item If any row in $rref(A)$ has an entry other than a leading 1 (a \textbf{free variable}) then the system has infinitely many solutions.
+	\end{itemize}
+	
+	The rank of a matrix $A$ is the number of leading 1s in $rref(A)$, equivalently expressed as the number of leading variables in the solution to the system.\\
+	
+	You can interpret the rank of $A$ to determine what possibilities exist for the system's solution:\\\\
+	\begin{tabular}{ |c|c|c| } 
+		\hline
+		$rank(A)$ is \ldots & $< m$ & $ = m$ \\ 
+		\hline
+		$< n$ & inconsistent, infinitely many & inconsistent, exactly one \\ 
+		\hline
+		$= n$ & infinitely many & exactly one \\ 
+		\hline
+	\end{tabular}\\
+
+	This is an extension of the theorems in Example 4. Note that an equation with fewer equations than unknowns cannot have a unique solution.\\
+	
+	Solving a linear equation $A\vec{x}=\vec{b}$ is equivalent to expressing $\vec{b}$ as a linear combination of the column vectors of $A$.
+	
+	\setcounter{section}{1}
+	\section{Linear Transformations}
+	\subsection{Introduction to Linear Transformations and Their Inverses}
+	A function $T: \mathbb{R}^m \rightarrow \mathbb{R}^n$ is a \textbf{linear transformation} if there exists a matrix  $A: n \times m$ such that $T(\vec{x}) = A\vec{x}$.\\
+	
+	A transformation is linear iff $T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w})$ and $T(k\vec{v}) = kT(\vec{v})$
+	 
+	\subsection{Linear Transformations in Geometry}
+	A \textbf{scaling} takes the form $k\begin{bmatrix}
+	1 & 0 \\
+	0 & 1 \\
+	\end{bmatrix}$\\
+	
+	An orthogonal projection onto some line $L$ parallel to $\vec{w}$ is $proj_L(\vec{x}) = (\frac{\vec{x} \cdot \vec{w}}{\vec{w} \cdot \vec{w}}) \vec{w}$. If $\vec{w}$ is a unit vector it simplifies to $proj_L(\vec{x}) = (\vec{x} \cdot \vec{u})\vec{u}$.\\
+	
+	An \textbf{orthogonal projection} takes the form $\frac{1}{w_1^2 w_2^2} \begin{bmatrix}
+	w_1^2 & w_1w_2 \\
+	w_1w_2 & w_2^2 \\
+	\end{bmatrix} = \begin{bmatrix}
+	u_1^2 & u_1u_2 \\
+	u_1u_2 & u_2^2 \\
+	\end{bmatrix} $\\
+	
+	A \textbf{reflection} across a line $L$ is given by $ref_L(\vec{x}) = 2 proj_L(\vec{x}) - \vec{x} = 2(\vec{x} \cdot \vec{u})\vec{u} - \vec{x}$. It takes the form $\begin{bmatrix}
+		a & b \\
+		b & -a \\
+	\end{bmatrix}, a^2 + b^2 = 1$
+	
+	A \textbf{rotation} in the counterclockwise direction through angle $\theta$ is
+	$\begin{bmatrix}
+	cos\theta & -sin\theta \\
+	sin\theta & cos\theta \\
+	\end{bmatrix}$
+	
+	A \textbf{horizontal shear} takes the form $k\begin{bmatrix}
+	1 & k \\
+	0 & 1 \\
+	\end{bmatrix}$\\
+	
+	Similarly, a \textbf{vertical shear} takes the form $k\begin{bmatrix}
+	1 & 0 \\
+	k & 1 \\
+	\end{bmatrix}$\\
+	
+	\subsection{Matrix Products}
+	Multiplying two matrices represents the composition of two linear transformations, like $f(g(x))$.\\ 
+	
+	For the product $BA$ it is equivalent to applying $B$ to the column vectors of A and combining the resulting vectors into a matrix.\\
+	
+	Matrix multiplication is not commutative, but it is associative and distributive across other matrices.
+	
+	\subsection{The Inverse of a Linear Transformation}
+		
 	\setcounter{section}{2}
 	\section{Subspaces of $\mathbb{R}^n$ and Their Dimensions}
 	\subsection{Image and Kernel of a Linear Transformation}

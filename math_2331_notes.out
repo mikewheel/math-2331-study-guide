@@ -1,0 +1,31 @@
+\BOOKMARK [1][-]{section.1}{Linear Equations}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Introduction to Linear Systems}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Matrices, Vectors, and Gauss-Jordan Elimination}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{On the Solutions of Linear Systems}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{Linear Transformations}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{Introduction to Linear Transformations and Their Inverses}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Linear Transformations in Geometry}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Matrix Products}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.4}{The Inverse of a Linear Transformation}{section.2}% 9
+\BOOKMARK [1][-]{section.3}{Subspaces of Rn and Their Dimensions}{}% 10
+\BOOKMARK [2][-]{subsection.3.1}{Image and Kernel of a Linear Transformation}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Subspaces of Rn; Bases and Linear Independence}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.3}{The Dimension of a Subspace of Rn}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.4}{Coordinates}{section.3}% 14
+\BOOKMARK [1][-]{section.5}{Orthogonality and Least Squares}{}% 15
+\BOOKMARK [2][-]{subsection.5.1}{Orthogonal Projections and Orthonormal Bases}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.2}{Gram-Schmidt Process and QR Factorization}{section.5}% 17
+\BOOKMARK [2][-]{subsection.5.3}{Orthogonal Transformations and Orthogonal Matrices}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.4}{Least Squares and Data Fitting}{section.5}% 19
+\BOOKMARK [1][-]{section.6}{Determinants}{}% 20
+\BOOKMARK [2][-]{subsection.6.1}{Introduction to Determinants}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.2}{Properties of the Determinant}{section.6}% 22
+\BOOKMARK [1][-]{section.7}{Eigenvalues and Eigenvectors}{}% 23
+\BOOKMARK [2][-]{subsection.7.1}{Diagonalization}{section.7}% 24
+\BOOKMARK [2][-]{subsection.7.2}{Finding the Eigenvalues of a Matrix}{section.7}% 25
+\BOOKMARK [2][-]{subsection.7.3}{Finding the Eigenvectors of a Matrix}{section.7}% 26
+\BOOKMARK [2][-]{subsection.7.4}{Dynamical Systems}{section.7}% 27
+\BOOKMARK [1][-]{section.8}{Symmetric Matrices and Quadratic Forms}{}% 28
+\BOOKMARK [2][-]{subsection.8.1}{Symmetric Matrices}{section.8}% 29
+\BOOKMARK [2][-]{subsection.8.2}{Quadratic Forms}{section.8}% 30
+\BOOKMARK [2][-]{subsection.8.3}{Singular Values}{section.8}% 31
